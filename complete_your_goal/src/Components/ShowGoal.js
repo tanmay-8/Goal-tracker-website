@@ -37,18 +37,15 @@ const ShowGoal = () => {
     }
     // eslint-disable-next-line
   }, [id]);
-
+  const onChange=(e)=>{
+    setLog({ ...log, [e.target.name]: e.target.value });
+  }
   // adding log
   const submit = (e) => {
     e.preventDefault();
+    addLog(log, id);
     let desc = document.getElementById("desc");
     let increasedBy = document.getElementById("increasedBy");
-    let newLog = {
-      desc: desc.value,
-      increasedBy: increasedBy.value,
-    };
-    setLog(newLog);
-    addLog(log, id);
     desc.value = "";
     increasedBy.value = "";
   };
@@ -129,6 +126,7 @@ const ShowGoal = () => {
               {/* to add log */}
               <form onSubmit={submit}>
                 <textarea
+                  onChange = {onChange}
                   type={"text"}
                   name="desc"
                   id="desc"
@@ -142,6 +140,7 @@ const ShowGoal = () => {
                 ></textarea>
                 <div className="flex items-center space-x-3">
                   <input
+                    onChange = {onChange}
                     className="p-2 border border-gray-500 rounded-md outline-none focus:border-gray-600 w-full"
                     type={"number"}
                     name="increasedBy"

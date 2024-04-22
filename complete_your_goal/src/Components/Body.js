@@ -58,14 +58,14 @@ const Body = (props) => {
   }, [props.searcht]);
 
   // to search goals according to searched text
-  const searchedgoals = goals.filter((goal)=>{
+  const searchedgoals = (goals)?goals.filter((goal)=>{
     if(searcht.length<=1 || searcht===""){
       return goal
     }
     else{
       return goal.title.toLowerCase().includes(searcht.toLowerCase())
     }
-  })
+  }):[]
 
   return (
     <div className="py-2 p-1">
@@ -80,6 +80,7 @@ const Body = (props) => {
       <AddGoal trigger={trigger} setTrigger={setTrigger}/>
 
       {/* Showing goals */}
+
       <div className="px-2 text-center lg:text-left grid xl:grid-cols-3 lg:grid-cols-2">
         {searchedgoals.map((goal) => {
           const title = goal.title;

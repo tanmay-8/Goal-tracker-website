@@ -195,7 +195,7 @@ const ShowGoal = () => {
                     </div>
                 </div>
             ) : (
-                <div>Nothing to show.</div>
+                <div>Loadin...</div>
             )}
         </div>
     );

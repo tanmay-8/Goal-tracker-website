@@ -80,7 +80,7 @@ const Body = (props) => {
       <AddGoal trigger={trigger} setTrigger={setTrigger}/>
 
       {/* Showing goals */}
-      <div className="px-2 text-center lg:text-left">
+      <div className="px-2 text-center lg:text-left grid xl:grid-cols-3 lg:grid-cols-2">
         {searchedgoals.map((goal) => {
           const title = goal.title;
           const desc = goal.desc;
@@ -88,7 +88,7 @@ const Body = (props) => {
           return (
             <div
               key={goal._id}
-              className="block w-11/12 mx-auto md:inline-block md:w-w-45% lg:w-w-30% md:mx-4 my-6 md:my-4 rounded-lg shadow-xl cursor-pointer hover:-translate-y-2 transition-all border font-head"
+              className=" mx-auto md:inline-block md:mx-4 my-6 md:my-4 rounded-lg shadow-xl cursor-pointer hover:-translate-y-2 transition-all border font-head"
               style={{
                 backgroundColor: color_scheme.bg,
                 color: color_scheme.textColor,
@@ -102,9 +102,9 @@ const Body = (props) => {
                 <p className="w-full">{title}</p>
                 <img src={setImg(goal.type)} className="w-8" alt="logo"></img>
               </div>
-              <div className="flex space-x-2 p-2">
+              <div className="md:flex space-x-2 p-2">
                 <div className="w-full text-left p-1 font-semibold">
-                  <p>
+                  <p className=" break-words">
                     {desc.length > 60 ? (
                       <>{desc.slice(0, 60)}...</>
                     ) : (
@@ -112,7 +112,7 @@ const Body = (props) => {
                     )}
                   </p>
                 </div>
-                <div className="w-28">
+                <div className="w-28 mx-auto">
                   <CircularProgressbarWithChildren
                     value={goal.nowprogress}
                     styles={buildStyles({

@@ -22,7 +22,7 @@ const SignUp = () => {
     try {
       e.preventDefault();
       const response = await fetch(
-        "http://localhost:5000/api/user/createuser",
+        "https://goal-tracker-website.onrender.com/api/user/createuser",
         {
           method: "POST",
           headers: {

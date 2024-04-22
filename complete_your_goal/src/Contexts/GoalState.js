@@ -13,7 +13,7 @@ const GoalState = (props) => {
 
   //getting goals
   const getGoals =async()=>{
-    const response = await fetch("http://localhost:5000/api/goal/getgoals",{
+    const response = await fetch("https://goal-tracker-website.onrender.com/api/goal/getgoals",{
       method:"GET",
       headers:{
         "Content-Type":"application/json",
@@ -22,12 +22,13 @@ const GoalState = (props) => {
     })
 
     let json = await response.json()
+    console.log(json)
     setGoals(json)
   }
 
   //getting goal
   const getGoal =async(id)=>{
-    const response = await fetch("http://localhost:5000/api/goal/getgoal/"+id,{
+    const response = await fetch("https://goal-tracker-website.onrender.com/api/goal/getgoal/"+id,{
       method:"GET",
       headers:{
         "Content-Type":"application/json",
@@ -45,7 +46,7 @@ const GoalState = (props) => {
   const addGoal = async (goal) => {
     console.log("run")
     // api call
-    const response = await fetch("http://localhost:5000/api/goal/addgoal", {
+    const response = await fetch("https://goal-tracker-website.onrender.com/api/goal/addgoal", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -62,7 +63,7 @@ const GoalState = (props) => {
   const addLog = async (log,id) => {
     console.log("run")
     // api call
-    const response = await fetch("http://localhost:5000/api/goal/addlog/"+id, {
+    const response = await fetch("https://goal-tracker-website.onrender.com/api/goal/addlog/"+id, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",

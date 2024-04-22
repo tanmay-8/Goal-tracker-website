@@ -9,7 +9,7 @@ import ShowGoal from "./Components/ShowGoal";
 
 function App() {
   return (
-    <div className="App">
+    <div className="App h-full">
       <GoalState>
         <Routes>
           <Route path="/" element={<Home/>}></Route>

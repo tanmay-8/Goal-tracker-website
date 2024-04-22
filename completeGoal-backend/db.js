@@ -1,21 +1,17 @@
 const mongoose = require("mongoose");
 
+require("dotenv").config();
+
 //database url
-const mongoURL =
-  "mongodb://localhost:27017/completeYourGoal?directConnection=true&readPreference=primaryPreferred";
+const mongoURL = process.env.MONGO_URI;
 
 //connecting to mongodb database
-connectToMongo = () => {
-  mongoose.connect(
-    mongoURL,
-    { useNewUrlParser: true, useUnifiedTopology: true },
-    (err) => {
-      if (err) {
+const connectToMongo = async () => {
+    try {
+        await mongoose.connect(mongoURL);
+        console.log("connected to mongo")
+    } catch (err) {
         console.log(err);
-      } else {
-        console.log("connected");
-      }
     }
-  );
 };
 module.exports = connectToMongo;

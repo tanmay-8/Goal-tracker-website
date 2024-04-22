@@ -37,6 +37,7 @@ const GoalState = (props) => {
     // console.log(id)
     let json = await response.json()
     // console.log(json)
+    json.logs.reverse()
     setGoal(json)
   }
 

@@ -48,7 +48,7 @@ const SignUp = () => {
   };
 
   return (
-    <div className="py-4  bg-gradient-to-r from-purple-600 to-blue-400 ">
+    <div className="py-4 min-h-screen bg-gradient-to-r from-purple-600 to-blue-400 ">
       <h1
         className="text-3xl md:text-4xl font-bold py-2 my-6 font-head text-white text-center"
         style={style1}

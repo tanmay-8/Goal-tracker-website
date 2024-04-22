@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import personImg from "../Images/person.png";
+import { Link } from "react-router-dom";
 
 const Login = () => {
   const nevigate = useNavigate();
@@ -45,7 +46,7 @@ const Login = () => {
   };
 
   return (
-    <div className="py-4  bg-gradient-to-r from-purple-600 to-blue-400 min-h-screen">
+    <div className="min-h-screen py-4 bg-gradient-to-r from-purple-600 to-blue-400">
       <h1
         className="text-3xl md:text-4xl font-bold py-2 my-6 font-head text-white text-center"
         style={style1}
@@ -82,6 +83,9 @@ const Login = () => {
               ></input>
             </div>
           </form>
+          <div className="text-center p-1 text-sm font-semibold">
+            <Link to={"/SignUp"}> New User ? Create Account</Link>
+          </div>
         </div>
       </div>
       <div id="alert" className="font-bold text-center p-1 text-red-500"></div>

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import personImg from "../Images/person.png";
 import { Link } from "react-router-dom";
@@ -44,7 +44,12 @@ const Login = () => {
       alert.innerHTML = "Internal server error.";
     }
   };
-
+  useEffect(()=>{
+    const token = localStorage.getItem("Goal-token")
+    if(token){
+      nevigate("/")
+    }
+  },[])
   return (
     <div className="min-h-screen py-4 bg-gradient-to-r from-purple-600 to-blue-400">
       <h1

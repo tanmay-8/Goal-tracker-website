@@ -55,7 +55,7 @@ const ShowGoal = () => {
                 >
                     {/* title */}
                     <div
-                        className="p-1 text-2xl md:p-2 md:text-3xl font-bold flex items-center w-full"
+                        className="p-1 text-2xl md:p-2 md:text-3xl font-semibold flex items-center w-full"
                         style={{
                             backgroundColor: goal.color_scheme.headerFooter,
                         }}
@@ -89,7 +89,7 @@ const ShowGoal = () => {
                                 </strong>
                             </CircularProgressbarWithChildren>
                         </div>
-                        <div className="md:w-4/5 font-semibold text-lg space-y-2">
+                        <div className="md:w-4/5 font-medium text-lg space-y-2">
                             <p>
                                 <span className="underline">Description:</span>
                                 <br></br>
@@ -156,7 +156,7 @@ const ShowGoal = () => {
                                     <input
                                         type={"submit"}
                                         value={"Add log"}
-                                        className="cursor-pointer text-lg font-semibold px-4 py-2 bg-green-500 text-yellow-50 rounded-lg shadow-md hover:scale-110"
+                                        className="cursor-pointer text-lg font-medium px-4 py-2 bg-green-500 text-yellow-50 rounded-lg shadow-md hover:scale-110"
                                         name="increasedBy"
                                     ></input>
                                 </div>
@@ -164,7 +164,7 @@ const ShowGoal = () => {
                         </div>
                     </div>
                     <div className="p-4">
-                        <h1 className="px-2 py-1 text-lg font-bold">Logs</h1>
+                        <h1 className="px-2 py-1 text-lg font-semibold">Logs</h1>
                         <hr className="-mx-2"></hr>
                         <div className="space-y-5">
                         {goal.logs.map((log) => {
@@ -176,13 +176,13 @@ const ShowGoal = () => {
                                         <p className="text-sm">
                                             {date}&nbsp;&nbsp;{time}
                                         </p>
-                                        <p className="text-lg font-semibold">
+                                        <p className="text-lg font-medium">
                                             {log.desc}
                                         </p>
-                                        <p className="text-lg font-semibold">
+                                        <p className="text-lg font-medium">
                                             Progress by {log.increasedBy}%
                                         </p>
-                                        <p className="text-lg font-semibold">
+                                        <p className="text-lg font-medium">
                                             Progress after log {log.progressNow}
                                             %
                                         </p>
